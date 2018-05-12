@@ -1,2 +1,2 @@
-import { OnLoadHandler } from "./file";
+import { OnLoadHandler } from "./file.js";
 document.onreadystatechange = OnLoadHandler;
