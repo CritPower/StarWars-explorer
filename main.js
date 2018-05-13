@@ -1,4 +1,5 @@
 import { OnLoadHandler } from "./file.js";
+//import Vue from "vue";
 document.onreadystatechange = OnLoadHandler;
 
 const options = { 
@@ -6,4 +7,4 @@ const options = {
     data: {message: 'test'}
  };
 
-const app = new Vue(option);
+const app = new Vue(options);
