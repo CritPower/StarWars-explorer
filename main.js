@@ -1,10 +1,21 @@
-import { OnLoadHandler } from "./file.js";
+//import { OnLoadHandler } from "./file.js";
 //import Vue from "vue";
+
 document.onreadystatechange = OnLoadHandler;
 
-const options = { 
-    el: '#app',
-    data: {message: 'test'}
- };
+function OnLoadHandler() {
+    if (document.readyState === "complete") {
+        init();
+    }
+}
 
-const app = new Vue(options);
+function init(){
+    const options = { 
+        el: '#app',
+        data: {
+            message: 'test'
+        }
+     };
+
+    window.app = new Vue(options);
+} 
