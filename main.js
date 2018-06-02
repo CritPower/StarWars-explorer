@@ -13,7 +13,8 @@ function init(){
     const options = { 
         el: '#app',
         data: {
-            message: 'test'
+            message: 'test',
+            title: 'title' + new Date().toLocaleString()
         }
      };
 
