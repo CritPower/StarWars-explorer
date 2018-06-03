@@ -11,12 +11,13 @@ function OnLoadHandler() {
 
 function init(){
     const options = { 
-        el: '#app',
+        el: "#app",
         data: {
-            message: 'data.message test',
-            message2: 'data.message2 test ' + new Date().toLocaleString(),
-            messageB: 'data.messageB test ' + new Date().toLocaleString(),
-            title: 'data.title test' + new Date().toLocaleString()
+            message: "data.message test",
+            message2: "data.message2 test " + new Date().toLocaleString(),
+            messageB: "data.messageB test " + new Date().toLocaleString(),
+            title: "data.title test" + new Date().toLocaleString(),
+            isVisible: true
         }
      };
 

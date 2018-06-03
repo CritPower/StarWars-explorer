@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <!-- <script type="module" src="./file.js"></script> -->
-        <script src="./main.js"></script>
-    </head>
-    <body>
-      <h1>Hello</h1>
-      <div id="app">
-            <div><span>{{ message }} - vlue from data.message</span></div>
-            <div><span v-bind:title="message">Test1</span></div>
-            <div><span v-bind:title="message2">Test2</span></div>
-            <div><span v-bind:title="messageB">Test3</span></div>
-            <div><span v-bind:title="title">Test4</span></div>
-       </div>
-    </body>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <script type="module" src="./file.js"></script> -->
+    <script src="./main.js"></script>
+</head>
+
+<body>
+    <h1>Hello</h1>
+    <div id="app">
+        <div v-if="isVisible">
+            <div>
+                <span>{{ message }} - vlue from data.message</span>
+            </div>
+            <div>
+                <span v-bind:title="message">Test1</span>
+            </div>
+            <div>
+                <span v-bind:title="message2">Test2</span>
+            </div>
+            <div>
+                <span v-bind:title="messageB">Test3</span>
+            </div>
+            <div>
+                <span v-bind:title="title">Test4</span>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
