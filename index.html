@@ -12,8 +12,11 @@
     <div id="app">
         <div v-if="isVisible">
             <div>
-                <span>{{ message }} - vlue from data.message</span>
+                <span v-once>{{ message }} - vlue from data.message</span>
             </div>
+            <input v-model="message">
+            <button v-on:click="myFunction">Reverse</button>
+            <button v-on:click="reverseMessage">Reverse</button>
             <div>
                 <span v-bind:title="message">Test1</span>
             </div>
@@ -30,9 +33,11 @@
         <div>
             <span>planets</span>
             <ol>
-                <li v-for="planet in planets">
-                    {{planet.name}}
-                </li>
+                <planet-info
+                v-for="planet in planets"
+                v-bind:planet = "planet"
+                v-bind:key = "planet.id"
+                ></planet-info>
             </ol>
         </div>
     </div>

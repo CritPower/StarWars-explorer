@@ -20,6 +20,7 @@ function init() {
             isVisible: true,
             planets: [
                 {
+                    id:1,
                     "name": "Yavin IV",
                     "rotation_period": "24",
                     "orbital_period": "4818",
@@ -38,6 +39,7 @@ function init() {
                     "url": "https://swapi.co/api/planets/3/"
                 },
                 {
+                    id:2,
                     "name": "Alderaan",
                     "rotation_period": "24",
                     "orbital_period": "364",
@@ -61,6 +63,7 @@ function init() {
                     "url": "https://swapi.co/api/planets/2/"
                 },
                 {
+                    id:3,
                     "name": "Tatooine",
                     "rotation_period": "23",
                     "orbital_period": "304",
@@ -94,8 +97,33 @@ function init() {
                     "url": "https://swapi.co/api/planets/1/"
                 }
             ]
+        },
+        methods: {
+            myFunction: function () {
+                this.message = this.message.split('').reduce((acum, element, index, array) => {
+                    acum.unshift(element);
+                    return acum;
+                }, []).join('');
+            },
+
+            reverseMessage: function () {
+                this.message = this.message.split('').reverse().join('')
+            }
+        },
+        created: function() {
+            console.log("Created. some data = " + this.message);
         }
     };
+    Vue.component('planet-info', {
+        props: ['planet'],
+        template: '<li>{{planet.name}}</li>'
+    });
+
+
 
     window.app = new Vue(options);
+    window.app.$watch('message', (newVal, oldValue)=>{
+        console.log(newVal);
+        console.log(oldValue);
+    });
 } 
