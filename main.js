@@ -14,6 +14,7 @@ function init(){
         el: '#app',
         data: {
             message: 'test',
+            message2: 'title ' + new Date().toLocaleString(),
             title: 'title' + new Date().toLocaleString()
         }
      };
