@@ -13,9 +13,10 @@ function init(){
     const options = { 
         el: '#app',
         data: {
-            message: 'test',
-            message2: 'title ' + new Date().toLocaleString(),
-            title: 'title' + new Date().toLocaleString()
+            message: 'data.message test',
+            message2: 'data.message2 test ' + new Date().toLocaleString(),
+            messageB: 'data.messageB test ' + new Date().toLocaleString(),
+            title: 'data.title test' + new Date().toLocaleString()
         }
      };
 
