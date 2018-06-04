@@ -13,6 +13,9 @@ function init() {
     const options = {
         el: "#app",
         data: {
+            testId: "superId",
+            isButtonDisabled: false,
+            someHtml:'<span style="color:red">Text in span</span>',
             message: "data.message test",
             message2: "data.message2 test " + new Date().toLocaleString(),
             messageB: "data.messageB test " + new Date().toLocaleString(),
@@ -20,7 +23,7 @@ function init() {
             isVisible: true,
             planets: [
                 {
-                    id:1,
+                    id: 1,
                     "name": "Yavin IV",
                     "rotation_period": "24",
                     "orbital_period": "4818",
@@ -39,7 +42,7 @@ function init() {
                     "url": "https://swapi.co/api/planets/3/"
                 },
                 {
-                    id:2,
+                    id: 2,
                     "name": "Alderaan",
                     "rotation_period": "24",
                     "orbital_period": "364",
@@ -63,7 +66,7 @@ function init() {
                     "url": "https://swapi.co/api/planets/2/"
                 },
                 {
-                    id:3,
+                    id: 3,
                     "name": "Tatooine",
                     "rotation_period": "23",
                     "orbital_period": "304",
@@ -110,7 +113,7 @@ function init() {
                 this.message = this.message.split('').reverse().join('')
             }
         },
-        created: function() {
+        created: function () {
             console.log("Created. some data = " + this.message);
         }
     };
@@ -122,7 +125,7 @@ function init() {
 
 
     window.app = new Vue(options);
-    window.app.$watch('message', (newVal, oldValue)=>{
+    window.app.$watch('message', (newVal, oldValue) => {
         console.log(newVal);
         console.log(oldValue);
     });

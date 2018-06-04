@@ -8,9 +8,12 @@
 </head>
 
 <body>
-    <h1>Hello</h1>
+    <h1>test</h1>
     <div id="app">
         <div v-if="isVisible">
+            <button v-bind:id="testId" v-bind:disabled="isButtonDisabled">Button for testing v-bind:disable and id atr</button>
+            <div v-html="someHtml">
+            </div>
             <div>
                 <span v-once>{{ message }} - vlue from data.message</span>
             </div>
@@ -33,11 +36,7 @@
         <div>
             <span>planets</span>
             <ol>
-                <planet-info
-                v-for="planet in planets"
-                v-bind:planet = "planet"
-                v-bind:key = "planet.id"
-                ></planet-info>
+                <planet-info v-for="planet in planets" v-bind:planet="planet" v-bind:key="planet.id"></planet-info>
             </ol>
         </div>
     </div>
