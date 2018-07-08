@@ -2,7 +2,6 @@
     <article class="film">
     <header>
         <h3>{{this.film.title}}</h3>
-        
     </header>
     <main>
         <div>{{this.film.opening_crawl}}</div>
@@ -10,7 +9,11 @@
     <footer>
         <img class="film-img" src="https://d32xvgr96w2oxp.cloudfront.net/2018/02/death-star-pet-cave.jpg">
         <div>
-            Planets / Starships / Vehicles / Species
+            <router-link :to="planetsUrl"> Planets /</router-link>
+            <router-link :to="planetUrl"> Characters /</router-link>
+            <router-link :to="planetUrl"> Starships /</router-link>
+            <router-link :to="planetUrl"> Vehicles /</router-link>
+            <router-link :to="planetUrl"> Species /</router-link>
         </div>
     </footer>
     </article>
@@ -19,7 +22,24 @@
 <script>
 export default {
   name: "Film",
-  props: ["film"]
+  props: ["film"],
+  computed: {
+    planetsUrl: function(){
+        return `/films/${this.film.title}/planets`;
+    },
+    sharacterstUrl: function(){
+        return `/films/${this.film.title}/characters`;
+    },
+    starshipsUrl: function(){
+        return `/films/${this.film.title}/starships`;
+    },
+    sehiclesUrl: function(){
+        return `/films/${this.film.title}/vehicles`;
+    },
+    speciesUrl: function(){
+        return `/films/${this.film.title}/species`;
+    }
+  }
 };
 </script>
 
@@ -48,9 +68,15 @@ export default {
   padding-bottom: 10px;
 }
 
-.film-img{
-    width: 100%;
-    height: 250px;
-    padding-bottom: 2px; 
+.film-img {
+  width: 100%;
+  height: 250px;
+  padding-bottom: 2px;
 }
+
+/* Fix it! */
+a:-webkit-any-link {
+    color: white ;
+}
+
 </style>

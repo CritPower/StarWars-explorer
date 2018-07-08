@@ -5,8 +5,6 @@ import About from './views/About.vue';
 import PlanetGallery from './components/PlanetGallery.vue';
 import FilmViewer from './components/FilmViewer.vue';
 
-
-
 Vue.use(Router);
 
 export default new Router({
@@ -24,17 +22,17 @@ export default new Router({
     {
       path: '/planets',
       name: 'planets',
-      component: PlanetGallery
+      component: PlanetGallery,
     },
     {
       path: '/films',
       name: 'films',
-      component: FilmViewer
+      component: FilmViewer,
     },
     {
       path: '/films/:title/planets',
       name: 'filmPlanets',
-      component: PlanetGallery
+      component: PlanetGallery,
     }
   ],
 });

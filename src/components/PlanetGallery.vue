@@ -1,8 +1,5 @@
 <template>
         <div>
-        <div v-if="isVisible">
-            <input v-model="message">
-        </div>
         <span>planets</span>
         <div>
             <planet v-for="planet in planets" v-bind:planet="planet" v-bind:key="planet.id"></planet>
@@ -26,20 +23,11 @@ export default {
   },
   data: function() {
     return {
-      superUrl: "https://google.com",
-      number: 1,
-      ok: true,
-      reversedMessage: "Test",
-      testId: "superId",
-      isButtonDisabled: false,
-      someHtml: '<span style="color:red">Text in span</span>',
-      message: "data.message test",
-      message2: "data.message2 test " + new Date().toLocaleString(),
-      messageB: "data.messageB test " + new Date().toLocaleString(),
-      title: "data.title test" + new Date().toLocaleString(),
-      isVisible: true,
+      dataUrl: "",
+      title: "",
       planets: [],
-      next: ""
+      next: "",
+      planetUrls: []
     };
   },
   methods: {
@@ -76,15 +64,30 @@ export default {
     }
   },
   created: function() {
-    console.log("Created. some data = " + this.message);
+    console.log("Created. some data");
   },
   mounted() {
-    fetch("https://swapi.co/api/planets/")
-      .then(response => response.json())
-      .then(data => {
-        this.planets = data.results;
-        this.next = data.next;
-      });
+    if (!!this.$route.params.title) {
+      fetch(`https://swapi.co/api/films/?search=${this.$route.params.title}`)
+        .then(response => response.json())
+        .then(data => {
+          return (this.planetUrls = data.results[0].planets);
+        })
+        .then(planetUrls => Promise.all(planetUrls.map(url => fetch(url))))
+        .then(responses =>
+          Promise.all(responses.map(response => response.json()))
+        )
+        .then(data => {
+          return (this.planets = data);
+        });
+    } else {
+      fetch("https://swapi.co/api/planets/")
+        .then(response => response.json())
+        .then(data => {
+          this.planets = data.results;
+          this.next = data.next;
+        });
+    }
   }
 };
 </script>
