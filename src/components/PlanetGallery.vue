@@ -1,13 +1,13 @@
 <template>
-        <article>
-        <header>Planets</Header>
-        <main>
-            <planet v-for="planet in planets" v-bind:planet="planet" v-bind:key="planet.id"></planet>
-        </main>
-        <footer>
-          <span class="more" @click="getMorePlanets" v-if="next">SHOW MORE</span>
-        </footer>
-        </article>
+  <article>
+    <header>Planets</Header>
+    <main>
+      <planet v-for="planet in planets" v-bind:planet="planet" v-bind:key="planet.id"></planet>
+    </main>
+    <footer>
+      <span class="more" @click="getMorePlanets" v-if="next">SHOW MORE</span>
+    </footer>
+  </article>
 </template>
 
 <script>
@@ -25,9 +25,6 @@ export default {
     };
   },
   methods: {
-    clickFunction: function(event) {
-      alert(":)");
-    },
     getMorePlanets: function() {
       if (this.next) {
         fetch(this.next)

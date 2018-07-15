@@ -4,20 +4,22 @@
             <div>
                 <span>{{this.person.id}}</span>
             </div>
-                <div class="img-container">
+            <div class="img-container">
                 <img class="person-img" src="../assets/person.svg">
             </div>
         </header>
         <main>
-        <div>
-            <header>{{this.person.name}}</header>
-        </div>
-        <div>
-            <div>Gender: {{this.person.gender}}</div>
-        </div>
+            <div>
+                <header>{{this.person.name}}</header>
+            </div>
+            <div>
+                <div>Gender: {{this.person.gender}}</div>
+            </div>
         </main>
         <footer class="person-footer">
-            <span><a class="person-details-link">SHOW</a></span>
+            <span>
+                <a class="person-details-link">SHOW</a>
+            </span>
             <div>
                 <router-link :to="planetsUrl"> Home /</router-link>
             </div>
@@ -55,6 +57,8 @@ export default {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  border: 0.5px solid grey;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
 .img-container::after {

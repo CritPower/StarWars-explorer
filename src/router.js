@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+
 import Home from './views/Home.vue';
 import About from './views/About.vue';
+
 import PlanetGallery from './components/PlanetGallery.vue';
 import FilmViewer from './components/FilmViewer.vue';
 import PersonViewer from './components/PersonViwer.vue';
@@ -50,6 +52,11 @@ export default new Router({
       path: '/starships',
       name: 'starships',
       component: StarshipViewer
+    },
+    {
+      path: '/characters',
+      name: 'characters',
+      component: PersonViewer
     }
   ],
 });

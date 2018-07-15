@@ -1,12 +1,15 @@
 <template>
-    <article>
+  <article>
     <header>
-    Starships
+      Starships
     </header>
     <main>
-        <starship v-for="starship in starships" :starship="starship" :key="starship.id"> </starship>
+      <starship v-for="starship in starships" :starship="starship" :key="starship.id"> </starship>
     </main>
-    </article>
+    <footer>
+       <span class="more" @click="getMore" v-if="next">SHOW MORE</span>
+    </footer>
+  </article>
 </template>
 
 <script>
@@ -19,6 +22,18 @@ export default {
       starships: [],
       next: ""
     };
+  },
+  methods: {
+    getMore: function() {
+      if (this.next) {
+        fetch(this.next)
+          .then(response => response.json())
+          .then(data => {
+            this.starships = this.starships.concat(data.results);
+            this.next = data.next;
+          });
+      }
+    }
   },
   mounted: function() {
     fetch("https://swapi.co/api/starships/")

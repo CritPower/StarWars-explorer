@@ -1,13 +1,13 @@
 <template>
-     <article>
-        <header>Characters</Header>
-        <main>
-            <person v-for="person in characters" v-bind:person="person" v-bind:key="person.id"></person>
-        </main>
-        <footer>
-            <span class="more" @click="getMore" v-if="next">SHOW MORE</span>
-        </footer>
-        </article>
+  <article>
+    <header>Characters</Header>
+    <main>
+      <person v-for="person in characters" v-bind:person="person" v-bind:key="person.id"></person>
+    </main>
+    <footer>
+      <span class="more" @click="getMore" v-if="next">SHOW MORE</span>
+    </footer>
+  </article>
 </template>
 
 <script>
@@ -22,8 +22,20 @@ export default {
       next: ""
     };
   },
+  methods: {
+    getMore: function() {
+      if (this.next) {
+        fetch(this.next)
+          .then(response => response.json())
+          .then(data => {
+            this.characters = this.characters.concat(data.results);
+            this.next = data.next;
+          });
+      }
+    }
+  },
   mounted() {
-    if (this.$route.name === "planets") {
+    if (this.$route.name === "characters") {
       fetch("https://swapi.co/api/people/")
         .then(response => response.json())
         .then(data => {
