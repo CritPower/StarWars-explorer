@@ -4,7 +4,7 @@
             <span>{{planet.id}}</span>
         </div>
         <div class="img-container">
-        <img class="planet-img" src="http://cdn.24.co.za/files/Cms/General/d/6693/89abdea4c6da44918dc52a0887e14648.jpg">
+        <img class="planet-img" src="../assets/if_29_saturn_solar_system_planet_ring_galaxy_universe_astrology_1012847.svg">
         </div>
         <div>
             <span>{{planet.name}}</span>
@@ -16,7 +16,7 @@
             <span>{{planet.color}}</span>
         </div>
         <footer class="planet-footer">
-        <span><a class="planet-details-link">Explore!</a></span>
+        <span><a class="planet-details-link">SHOW</a></span>
         </footer>
     </div>
 </template>
@@ -67,21 +67,22 @@ export default {
   width: 100%;
   border: 0.5px solid grey;
   border-radius: 50%;
-  background-color: grey; 
+  background-color: grey;
 }
 .planet-details-link {
   color: whitesmoke;
 }
-.planet-footer{
-    background-color: black;
-    border-radius: 5px;
-    position: absolute;
-    bottom: 25px;
-    left: 5%;
-    right: 5%;
-    height: 25px;
-        text-align: center;
-    vertical-align: middle;
-    line-height: 25px;
+.planet-footer {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.836);
+  border-radius: 5px;
+  position: absolute;
+  bottom: 25px;
+  left: 5%;
+  right: 5%;
+  height: 25px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 25px;
 }
 </style>

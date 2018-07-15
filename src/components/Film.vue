@@ -7,13 +7,13 @@
         <div>{{this.film.opening_crawl}}</div>
     </main>
     <footer>
-        <img class="film-img" src="https://d32xvgr96w2oxp.cloudfront.net/2018/02/death-star-pet-cave.jpg">
+        <img class="film-img" src="../assets/if_Death_Star_explode_star_wars_3151598.svg">
         <div>
             <router-link :to="planetsUrl"> Planets /</router-link>
-            <router-link :to="planetUrl"> Characters /</router-link>
-            <router-link :to="planetUrl"> Starships /</router-link>
-            <router-link :to="planetUrl"> Vehicles /</router-link>
-            <router-link :to="planetUrl"> Species /</router-link>
+            <router-link :to="sharacterstUrl"> Characters /</router-link>
+            <router-link :to="starshipsUrl"> Starships /</router-link>
+            <router-link :to="vehiclesUrl"> Vehicles /</router-link>
+            <router-link :to="speciesUrl"> Species /</router-link>
         </div>
     </footer>
     </article>
@@ -33,7 +33,7 @@ export default {
     starshipsUrl: function(){
         return `/films/${this.film.title}/starships`;
     },
-    sehiclesUrl: function(){
+    vehiclesUrl: function(){
         return `/films/${this.film.title}/vehicles`;
     },
     speciesUrl: function(){
