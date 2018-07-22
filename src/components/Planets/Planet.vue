@@ -1,24 +1,26 @@
 <template>
-    <div class="planet-block">
-        <div>
-            <span>{{planet.id}}</span>
-        </div>
-        <div class="img-container">
-        <img class="planet-img" src="../../assets/planet.svg">
-        </div>
-        <div>
-            <span>{{planet.name}}</span>
-        </div>
-        <div>
-            <span>Size: {{planetSize}}</span>
-        </div>
-        <div>
-            <span>{{planet.color}}</span>
-        </div>
-        <footer class="planet-footer">
-        <span><a class="planet-details-link">SHOW</a></span>
-        </footer>
+  <div class="planet-block">
+    <div>
+      <span>{{planet.id}}</span>
     </div>
+    <div class="img-container">
+      <img class="planet-img" src="../../assets/planet.svg">
+    </div>
+    <div>
+      <span>{{planet.name}}</span>
+    </div>
+    <div>
+      <span>Size: {{planetSize}}</span>
+    </div>
+    <div>
+      <span>{{planet.color}}</span>
+    </div>
+    <footer class="planet-footer">
+      <span>
+        <router-link :to="planetUrl" class="planet-details-link">SHOW</router-link>
+      </span>
+    </footer>
+  </div>
 </template>
 
 <script>
@@ -36,6 +38,9 @@ export default {
       } else {
         return "OMG same size!";
       }
+    },
+    planetUrl: function() {
+      return `/planets/${this.planet.name}`;
     }
   }
 };

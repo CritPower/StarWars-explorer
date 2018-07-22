@@ -69,14 +69,6 @@ export default {
         .then(data => {
           return (this.planets = data);
         });
-    } else if (!!this.$route.params.id) {
-      //change to details page
-      fetch(`https://swapi.co/api/planets/${this.$route.params.id}`)
-        .then(response => response.json())
-        .then(data => {
-          this.planets.push(data);
-          this.next = data.next;
-        });
     } else {
       fetch("https://swapi.co/api/planets/")
         .then(response => response.json())
