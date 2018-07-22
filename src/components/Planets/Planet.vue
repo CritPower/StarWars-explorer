@@ -4,7 +4,7 @@
             <span>{{planet.id}}</span>
         </div>
         <div class="img-container">
-        <img class="planet-img" src="../assets/if_29_saturn_solar_system_planet_ring_galaxy_universe_astrology_1012847.svg">
+        <img class="planet-img" src="../../assets/planet.svg">
         </div>
         <div>
             <span>{{planet.name}}</span>

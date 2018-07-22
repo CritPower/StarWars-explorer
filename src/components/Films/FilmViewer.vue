@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Film from "@/components/Film.vue";
+import Film from "@/components/Films/Film.vue";
 export default {
   name: "FilmViewer",
   components: { Film },

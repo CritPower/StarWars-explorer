@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Planet from "@/components/Planet.vue";
+import Planet from "@/components/Planets/Planet.vue";
 export default {
   components: { Planet },
   name: "PlanetGallery",

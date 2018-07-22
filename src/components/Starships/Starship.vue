@@ -1,47 +1,38 @@
 <template>
-    <article class="person-block">
+    <article class="starship-block">
         <header>
             <div>
-                <span>{{this.person.id}}</span>
+                <span>{{this.starship.id}}</span>
             </div>
             <div class="img-container">
-                <img class="person-img" src="../assets/person.svg">
+                <img class="starship-img" src="../../assets/starship.svg">
             </div>
         </header>
         <main>
             <div>
-                <header>{{this.person.name}}</header>
+                <header>{{this.starship.name}}</header>
             </div>
             <div>
-                <div>Gender: {{this.person.gender}}</div>
+                <div>Cost: {{this.starship.cost_in_credits}}</div>
             </div>
         </main>
-        <footer class="person-footer">
+        <footer class="starship-footer">
             <span>
-                <a class="person-details-link">SHOW</a>
+                <a class="starship-details-link">SHOW</a>
             </span>
-            <div>
-                <router-link :to="planetsUrl"> Home /</router-link>
-            </div>
         </footer>
     </article>
 </template>
 
 <script>
 export default {
-  name: "Person",
-  props: ["person"],
-  computed: {
-    planetsUrl: function() {
-      return "";
-      return `/planets/${this.person.name}`;
-    }
-  }
+  name: "Starship",
+  props: ["starship"]
 };
 </script>
 
 <style>
-.person-block {
+.starship-block {
   width: 200px;
   height: 300px;
   display: inline-block;
@@ -53,7 +44,7 @@ export default {
   position: relative;
 }
 
-.person-img {
+.starship-img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -70,10 +61,10 @@ export default {
   border-radius: 50%;
   background-color: grey;
 }
-.person-details-link {
+.starship-details-link {
   color: whitesmoke;
 }
-.person-footer {
+.starship-footer {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.836);
   border-radius: 5px;

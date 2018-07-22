@@ -1,8 +1,10 @@
 <template>
   <article>
-    <header>Characters</Header>
+    <header>
+      Starships
+    </header>
     <main>
-      <person v-for="person in characters" v-bind:person="person" v-bind:key="person.id"></person>
+      <starship v-for="starship in starships" :starship="starship" :key="starship.id"> </starship>
     </main>
     <footer>
       <span class="more" @click="getMore" v-if="next">SHOW MORE</span>
@@ -11,14 +13,13 @@
 </template>
 
 <script>
-import Person from "@/components/Person.vue";
+import Starship from "@/components/Starships/Starship.vue";
 export default {
-  name: "PersonViewer",
-  components: { Person },
+  name: "StarshipViewer",
+  components: { Starship },
   data: function() {
     return {
-      SomeInfo: "",
-      characters: [],
+      starships: [],
       next: ""
     };
   },
@@ -28,34 +29,34 @@ export default {
         fetch(this.next)
           .then(response => response.json())
           .then(data => {
-            this.characters = this.characters.concat(data.results);
+            this.starships = this.starships.concat(data.results);
             this.next = data.next;
           });
       }
     }
   },
-  mounted() {
-    if (this.$route.name === "characters") {
-      fetch("https://swapi.co/api/people/")
+  mounted: function() {
+    if (this.$route.name === "starships") {
+      fetch("https://swapi.co/api/starships/")
         .then(response => response.json())
         .then(data => {
-          this.characters = data.results;
+          this.starships = data.results;
           this.next = data.next;
         });
-    } else if (this.$route.name === "filmCharacters") {
+    } else if (this.$route.name === "filmStarships") {
       fetch(`https://swapi.co/api/films/?search=${this.$route.params.title}`)
         .then(response => response.json())
         .then(data => {
-          return (this.planetUrls = data.results[0].characters);
+          return (this.starshipsUrls = data.results[0].starships);
         })
-        .then(charactersUrls =>
-          Promise.all(charactersUrls.map(url => fetch(url)))
+        .then(starshipsUrls =>
+          Promise.all(starshipsUrls.map(url => fetch(url)))
         )
         .then(responses =>
           Promise.all(responses.map(response => response.json()))
         )
         .then(data => {
-          return (this.characters = data);
+          return (this.starships = data);
         });
     }
   }

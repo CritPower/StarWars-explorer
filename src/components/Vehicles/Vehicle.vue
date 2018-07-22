@@ -1,24 +1,24 @@
 <template>
-    <article class="starship-block">
+    <article class="vehicle-block">
         <header>
             <div>
-                <span>{{this.starship.id}}</span>
+                <span>{{this.vehicle.id}}</span>
             </div>
             <div class="img-container">
-                <img class="starship-img" src="../assets/starship.svg">
+                <img class="vehicle-img" src="../../assets/vehicle.svg">
             </div>
         </header>
         <main>
             <div>
-                <header>{{this.starship.name}}</header>
+                <header>{{this.vehicle.name}}</header>
             </div>
             <div>
-                <div>Cost: {{this.starship.cost_in_credits}}</div>
+                <div>Model: {{this.vehicle.model}}</div>
             </div>
         </main>
-        <footer class="starship-footer">
+        <footer class="vehicle-footer">
             <span>
-                <a class="starship-details-link">SHOW</a>
+                <a class="vehicle-details-link">SHOW</a>
             </span>
         </footer>
     </article>
@@ -26,13 +26,13 @@
 
 <script>
 export default {
-  name: "Starship",
-  props: ["starship"]
+  name: "Vehicle",
+  props: ["vehicle"]
 };
 </script>
 
 <style>
-.starship-block {
+.vehicle-block {
   width: 200px;
   height: 300px;
   display: inline-block;
@@ -44,7 +44,7 @@ export default {
   position: relative;
 }
 
-.starship-img {
+.vehicle-img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -61,10 +61,10 @@ export default {
   border-radius: 50%;
   background-color: grey;
 }
-.starship-details-link {
+.vehicle-details-link {
   color: whitesmoke;
 }
-.starship-footer {
+.vehicle-footer {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.836);
   border-radius: 5px;

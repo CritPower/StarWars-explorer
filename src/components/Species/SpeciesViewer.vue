@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Species from "@/components/Species.vue";
+import Species from "@/components/Species/Species.vue";
 export default {
   name: "SpeciesViewer",
   components: { Species },

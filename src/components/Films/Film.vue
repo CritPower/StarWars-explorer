@@ -7,7 +7,7 @@
         <div>{{this.film.opening_crawl}}</div>
     </main>
     <footer>
-        <img class="film-img" src="../assets/if_Death_Star_explode_star_wars_3151598.svg">
+        <img class="film-img" src="../../assets/film.svg">
         <div>
             <router-link :to="planetsUrl"> Planets /</router-link>
             <router-link :to="sharacterstUrl"> Characters /</router-link>

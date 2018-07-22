@@ -1,38 +1,37 @@
 <template>
-    <article class="vehicle-block">
-        <header>
-            <div>
-                <span>{{this.vehicle.id}}</span>
-            </div>
-            <div class="img-container">
-                <img class="vehicle-img" src="../assets/vehicle.svg">
-            </div>
-        </header>
-        <main>
-            <div>
-                <header>{{this.vehicle.name}}</header>
-            </div>
-            <div>
-                <div>Model: {{this.vehicle.model}}</div>
-            </div>
-        </main>
-        <footer class="vehicle-footer">
+    <div class="species-block">
+        <div>
+            <span>{{species.id}}</span>
+        </div>
+        <div class="img-container">
+            <img class="species-img" src="../../assets/species.svg">
+        </div>
+        <div>
+            <span>{{species.name}}</span>
+        </div>
+        <div>
+            <span>Average lifespan: {{species.average_lifespan}}</span>
+        </div>
+        <div>
+            <span>Eye colors: {{species.eye_colors}}</span>
+        </div>
+        <footer class="species-footer">
             <span>
-                <a class="vehicle-details-link">SHOW</a>
+                <a class="species-details-link">SHOW</a>
             </span>
         </footer>
-    </article>
+    </div>
 </template>
 
 <script>
 export default {
-  name: "Vehicle",
-  props: ["vehicle"]
+  name: "species",
+  props: ["species"]
 };
 </script>
 
 <style>
-.vehicle-block {
+.species-block {
   width: 200px;
   height: 300px;
   display: inline-block;
@@ -44,7 +43,7 @@ export default {
   position: relative;
 }
 
-.vehicle-img {
+.species-img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -61,10 +60,10 @@ export default {
   border-radius: 50%;
   background-color: grey;
 }
-.vehicle-details-link {
+.species-details-link {
   color: whitesmoke;
 }
-.vehicle-footer {
+.species-footer {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.836);
   border-radius: 5px;

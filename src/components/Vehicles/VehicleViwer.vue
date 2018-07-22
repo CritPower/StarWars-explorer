@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Vehicle from "@/components/Vehicle.vue";
+import Vehicle from "@/components/Vehicles/Vehicle.vue";
 export default {
   name: "Vehicles",
   components: { Vehicle },

@@ -1,37 +1,47 @@
 <template>
-    <div class="species-block">
-        <div>
-            <span>{{species.id}}</span>
-        </div>
-        <div class="img-container">
-            <img class="species-img" src="../assets/species.svg">
-        </div>
-        <div>
-            <span>{{species.name}}</span>
-        </div>
-        <div>
-            <span>Average lifespan: {{species.average_lifespan}}</span>
-        </div>
-        <div>
-            <span>Eye colors: {{species.eye_colors}}</span>
-        </div>
-        <footer class="species-footer">
+    <article class="person-block">
+        <header>
+            <div>
+                <span>{{this.person.id}}</span>
+            </div>
+            <div class="img-container">
+                <img class="person-img" src="../../assets/person.svg">
+            </div>
+        </header>
+        <main>
+            <div>
+                <header>{{this.person.name}}</header>
+            </div>
+            <div>
+                <div>Gender: {{this.person.gender}}</div>
+            </div>
+        </main>
+        <footer class="person-footer">
             <span>
-                <a class="species-details-link">SHOW</a>
+                <a class="person-details-link">SHOW</a>
             </span>
+            <div>
+                <router-link :to="planetsUrl"> Home /</router-link>
+            </div>
         </footer>
-    </div>
+    </article>
 </template>
 
 <script>
 export default {
-  name: "species",
-  props: ["species"]
+  name: "Person",
+  props: ["person"],
+  computed: {
+    planetsUrl: function() {
+      return "";
+      return `/planets/${this.person.name}`;
+    }
+  }
 };
 </script>
 
 <style>
-.species-block {
+.person-block {
   width: 200px;
   height: 300px;
   display: inline-block;
@@ -43,7 +53,7 @@ export default {
   position: relative;
 }
 
-.species-img {
+.person-img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -60,10 +70,10 @@ export default {
   border-radius: 50%;
   background-color: grey;
 }
-.species-details-link {
+.person-details-link {
   color: whitesmoke;
 }
-.species-footer {
+.person-footer {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.836);
   border-radius: 5px;

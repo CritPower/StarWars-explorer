@@ -3,12 +3,12 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import About from './views/About.vue';
 
-import PlanetGallery from './components/PlanetGallery.vue';
-import FilmViewer from './components/FilmViewer.vue';
-import PersonViewer from './components/PersonViwer.vue';
-import StarshipViewer from './components/StarshipViewer.vue';
-import VihecleViewer from './components/VehicleViwer.vue';
-import SpeciesViewer from './components/SpeciesViewer.vue';
+import PlanetGallery from './components/Planets/PlanetGallery.vue';
+import FilmViewer from './components/Films/FilmViewer.vue';
+import PersonViewer from './components/Person/PersonViwer.vue';
+import StarshipViewer from './components/Starships/StarshipViewer.vue';
+import VihecleViewer from './components/Vehicles/VehicleViwer.vue';
+import SpeciesViewer from './components/Species/SpeciesViewer.vue';
 
 Vue.use(Router);
 
