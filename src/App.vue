@@ -6,7 +6,9 @@
       <router-link to="/films"> Films /</router-link>
       <router-link to="/planets"> Planets /</router-link>
       <router-link to="/characters"> Characters /</router-link>
-      <router-link to="/starships"> Starships </router-link>
+      <router-link to="/starships"> Starships /</router-link>
+      <router-link to="/vehicles"> Vehicles /</router-link>
+      <router-link to="/species"> Species /</router-link>
     </div>
     <router-view/>
   </div>
@@ -29,5 +31,8 @@
       color: #42b983;
     }
   }
+
+  border: 1px solid black;
+  border-radius: 5px;
 }
 </style>
