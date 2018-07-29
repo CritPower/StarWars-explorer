@@ -6,7 +6,9 @@ import About from './views/About.vue';
 import PlanetGallery from './components/Planets/PlanetGallery.vue';
 import FilmViewer from './components/Films/FilmViewer.vue';
 import PersonViewer from './components/Person/PersonViwer.vue';
+import PersonDetails from './components/Person/PersonDetails.vue';
 import StarshipViewer from './components/Starships/StarshipViewer.vue';
+import StarshipDetails from './components/Starships/StarshipDetails.vue';
 import VihecleViewer from './components/Vehicles/VehicleViwer.vue';
 import SpeciesViewer from './components/Species/SpeciesViewer.vue';
 import PlanetDetails from './components/Planets/PlanetDetails.vue';
@@ -34,6 +36,16 @@ export default new Router({
       path: '/planets/:title',
       name: 'planetDetails',
       component: PlanetDetails,
+    },
+    {
+      path: '/person/:name',
+      name: 'personDetails',
+      component: PersonDetails
+    },
+    {
+      path: '/starships/:name',
+      name: 'starshipDetails',
+      component: StarshipDetails
     },
     {
       path: '/films',

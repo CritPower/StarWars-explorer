@@ -18,7 +18,7 @@
         </main>
         <footer class="starship-footer">
             <span>
-                <a class="starship-details-link">SHOW</a>
+                <router-link :to="starshipUrl" class="starship-details-link">SHOW</router-link>
             </span>
         </footer>
     </article>
@@ -27,7 +27,12 @@
 <script>
 export default {
   name: "Starship",
-  props: ["starship"]
+  props: ["starship"],
+  computed: {
+    starshipUrl: function() {
+      return `/starships/${this.starship.name}`;
+    }
+  }
 };
 </script>
 

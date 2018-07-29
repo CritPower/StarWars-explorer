@@ -18,23 +18,19 @@
         </main>
         <footer class="person-footer">
             <span>
-                <a class="person-details-link">SHOW</a>
+                <router-link :to="personUrl" class="person-details-link">SHOW</router-link>
             </span>
-            <div>
-                <router-link :to="planetsUrl"> Home /</router-link>
-            </div>
         </footer>
     </article>
 </template>
 
 <script>
 export default {
-  name: "Person",
+  name: "person",
   props: ["person"],
   computed: {
-    planetsUrl: function() {
-      return "";
-      return `/planets/${this.person.name}`;
+    personUrl: function() {
+      return `/person/${this.person.name}`;
     }
   }
 };
