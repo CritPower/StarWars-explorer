@@ -37,7 +37,6 @@ export default {
     };
   },
   mounted: function() {
-      debugger;
     fetch(`https://swapi.co/api/species/?search=${this.$route.params.name}`)
       .then(response => response.json())
       .then(data => {

@@ -29,14 +29,13 @@ export default {
         fetch(this.next)
           .then(response => response.json())
           .then(data => {
-            this.starships = this.species.concat(data.results);
+            this.species = this.species.concat(data.results);
             this.next = data.next;
           });
       }
     }
   },
   mounted: function() {
-    debugger;
     if (this.$route.name === "species") {
       fetch("https://swapi.co/api/species/")
         .then(response => response.json())
