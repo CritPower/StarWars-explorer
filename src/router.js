@@ -10,7 +10,9 @@ import PersonDetails from './components/Person/PersonDetails.vue';
 import StarshipViewer from './components/Starships/StarshipViewer.vue';
 import StarshipDetails from './components/Starships/StarshipDetails.vue';
 import VihecleViewer from './components/Vehicles/VehicleViwer.vue';
+import VehicleDetails from './components/Vehicles/VehicleDetails.vue';
 import SpeciesViewer from './components/Species/SpeciesViewer.vue';
+import SpeciesDetails from './components/Species/SpeciesDetails.vue';
 import PlanetDetails from './components/Planets/PlanetDetails.vue';
 
 Vue.use(Router);
@@ -40,12 +42,12 @@ export default new Router({
     {
       path: '/person/:name',
       name: 'personDetails',
-      component: PersonDetails
+      component: PersonDetails,
     },
     {
       path: '/starships/:name',
       name: 'starshipDetails',
-      component: StarshipDetails
+      component: StarshipDetails,
     },
     {
       path: '/films',
@@ -68,9 +70,19 @@ export default new Router({
       component: VihecleViewer,
     },
     {
+      path: '/vehicles/:name',
+      name: 'VehicleDetails',
+      component: VehicleDetails,
+    },
+    {
       path: '/species',
       name: 'species',
       component: SpeciesViewer,
+    },
+    {
+      path: '/species/:name',
+      name: 'speciesDetails',
+      component: SpeciesDetails,
     },
     {
       path: '/films/:title/planets',

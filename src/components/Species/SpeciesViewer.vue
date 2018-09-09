@@ -36,6 +36,7 @@ export default {
     }
   },
   mounted: function() {
+    debugger;
     if (this.$route.name === "species") {
       fetch("https://swapi.co/api/species/")
         .then(response => response.json())

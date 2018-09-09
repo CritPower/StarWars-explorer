@@ -17,7 +17,7 @@
         </div>
         <footer class="species-footer">
             <span>
-                <a class="species-details-link">SHOW</a>
+                <router-link :to="speciesUrl" class="species-details-link">SHOW</router-link>
             </span>
         </footer>
     </div>
@@ -26,7 +26,12 @@
 <script>
 export default {
   name: "species",
-  props: ["species"]
+  props: ["species"],
+  computed: {
+    speciesUrl: function() {
+      return `/species/${this.species.name}`;
+    }
+  }
 };
 </script>
 

@@ -18,7 +18,7 @@
         </main>
         <footer class="vehicle-footer">
             <span>
-                <a class="vehicle-details-link">SHOW</a>
+                <router-link :to="vehicleUrl" class="vehicle-details-link">SHOW</router-link>
             </span>
         </footer>
     </article>
@@ -27,7 +27,12 @@
 <script>
 export default {
   name: "Vehicle",
-  props: ["vehicle"]
+  props: ["vehicle"],
+  computed: {
+      vehicleUrl: function() {
+          return `vehicles/${this.vehicle.name}`;
+      }
+  }
 };
 </script>
 
