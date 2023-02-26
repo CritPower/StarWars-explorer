@@ -38,7 +38,7 @@ export default {
     };
   },
   mounted: function() {
-    fetch(`https://swapi.co/api/people/?search=${this.$route.params.name}`)
+    fetch(`https://swapi.dev/api/people/?search=${this.$route.params.name}`)
       .then(response => response.json())
       .then(data => {
         this.name = data.results[0].name;

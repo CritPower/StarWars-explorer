@@ -57,7 +57,7 @@ export default {
   },
   mounted() {
     if (!!this.$route.params.title) {
-      fetch(`https://swapi.co/api/films/?search=${this.$route.params.title}`)
+      fetch(`https://swapi.dev/api/films/?search=${this.$route.params.title}`)
         .then(response => response.json())
         .then(data => {
           return (this.planetUrls = data.results[0].planets);
@@ -70,7 +70,7 @@ export default {
           return (this.planets = data);
         });
     } else {
-      fetch("https://swapi.co/api/planets/")
+      fetch("https://swapi.dev/api/planets/")
         .then(response => response.json())
         .then(data => {
           this.planets = data.results;

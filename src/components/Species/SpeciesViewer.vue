@@ -37,14 +37,14 @@ export default {
   },
   mounted: function() {
     if (this.$route.name === "species") {
-      fetch("https://swapi.co/api/species/")
+      fetch("https://swapi.dev/api/species/")
         .then(response => response.json())
         .then(data => {
           this.species = data.results;
           this.next = data.next;
         });
     } else if (this.$route.name === "filmSpecies") {
-      fetch(`https://swapi.co/api/films/?search=${this.$route.params.title}`)
+      fetch(`https://swapi.dev/api/films/?search=${this.$route.params.title}`)
         .then(response => response.json())
         .then(data => data.results[0].species)
         .then(speciesUrls => Promise.all(speciesUrls.map(url => fetch(url))))

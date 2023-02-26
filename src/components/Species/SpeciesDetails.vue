@@ -37,7 +37,7 @@ export default {
     };
   },
   mounted: function() {
-    fetch(`https://swapi.co/api/species/?search=${this.$route.params.name}`)
+    fetch(`https://swapi.dev/api/species/?search=${this.$route.params.name}`)
       .then(response => response.json())
       .then(data => {
         this.average_height = data.results[0].average_height;

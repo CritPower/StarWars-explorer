@@ -21,7 +21,7 @@ export default {
     };
   },
   mounted() {
-    fetch("https://swapi.co/api/films/")
+    fetch("https://swapi.dev/api/films/")
       .then(response => response.json())
       .then(data => {
         this.films = data.results;

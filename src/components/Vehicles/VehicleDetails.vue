@@ -39,7 +39,7 @@ export default {
     };
   },
   mounted: function() {
-    fetch(`https://swapi.co/api/vehicles/?search=${this.$route.params.name}`)
+    fetch(`https://swapi.dev/api/vehicles/?search=${this.$route.params.name}`)
       .then(response => response.json())
       .then(data => {
         this.cargo_capacity = data.results[0].cargo_capacity;

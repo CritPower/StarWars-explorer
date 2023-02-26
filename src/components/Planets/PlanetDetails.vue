@@ -36,7 +36,7 @@ export default {
       },
       mounted: function() {
 
-      fetch(`https://swapi.co/api/planets/?search=${this.$route.params.title}`)
+      fetch(`https://swapi.dev/api/planets/?search=${this.$route.params.title}`)
         .then(response => response.json())
         .then(data => {
           this.name = data.results[0].name;

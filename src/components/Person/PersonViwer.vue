@@ -36,14 +36,14 @@ export default {
   },
   mounted() {
     if (this.$route.name === "characters") {
-      fetch("https://swapi.co/api/people/")
+      fetch("https://swapi.dev/api/people/")
         .then(response => response.json())
         .then(data => {
           this.characters = data.results;
           this.next = data.next;
         });
     } else if (this.$route.name === "filmCharacters") {
-      fetch(`https://swapi.co/api/films/?search=${this.$route.params.title}`)
+      fetch(`https://swapi.dev/api/films/?search=${this.$route.params.title}`)
         .then(response => response.json())
         .then(data => {
           return (this.planetUrls = data.results[0].characters);
